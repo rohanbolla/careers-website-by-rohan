@@ -2,52 +2,35 @@
 <html>
   <head>
     <title>Careers  Website</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <style>
-      h1 {
-        font-size: 40px;
-        font-family: Arial;
-        font-weight: normal;
-        color:rgb(100,100,100);
-        text-align: center;
-      }
       #banner {
-        width:100%;
         height: 360px;
+        width: 100%;
         object-fit: cover;
       }
-      h2 {
-        font-family: Arial;
-        font-size: 32px;
-        color:rgb(100,100,100);
-        text-align: center;
-        font-weight: normal;x
-      }
-      #container {
-        max-width: 720px;
-        margin: 0 auto;
-      }
-      #contact-button {
-        text-align: center;  
-      }
-      .body-text {
-        font-family: Arial;
-        color:rgb(80,80,80);
-      }
+    </style>
     </style>
   </head>
   <body>
-    <div id='container'>
-      <h1>Careers Website</h1>
-      <img id="banner" src="https://careers-website-by-rohan.rohanbolla.repl.co/static/banner.jpg" alt="career banner" height='320'>
-      <h2>About Careers</h2>
-      <p class='body-text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nam aliquam sem et tortor consequat id porta nibh. Quis enim lobortis scelerisque fermentum dui. Non arcu risus quis varius. Bibendum at varius vel pharetra vel. Aliquam ut porttitor leo a diam sollicitudin tempor. Nec ultrices dui sapien eget mi. Odio ut enim blandit volutpat maecenas volutpat blandit aliquam etiam. Gravida dictum fusce ut placerat orci. Blandit libero volutpat sed cras. Malesuada fames ac turpis egestas maecenas pharetra convallis posuere. Enim diam vulputate ut pharetra sit amet. Aliquam etiam erat velit scelerisque in dictum non consectetur. In eu mi bibendum neque egestas congue quisque egestas. Tincidunt dui ut ornare lectus sit amet. Suscipit adipiscing bibendum est ultricies integer quis auctor elit sed. Turpis egestas integer eget aliquet nibh. Adipiscing at in tellus integer feugiat scelerisque varius. Elementum nibh tellus molestie nunc non blandit massa.</p>
-      <h2>Open Positions</h2>
-      <p class='body-text'>TODO - Show the job here</p>
-      <div style='text-align:center'>
-        <button id='contact-button'>
+    <div class='container mx-5 my-0 px-5 py-0'>
+      <h1 class="text-center mt-2 mb-2">{{company_name}} Website</h1>
+      <img class='img-fluid' id="banner" src="https://careers-website-by-rohan.rohanbolla.repl.co/static/banner.jpg" alt="career banner">
+      <h2 class="text-center mt-2 mb-2">About Careers</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nam aliquam sem et tortor consequat id porta nibh. Quis enim lobortis scelerisque fermentum dui. Non arcu risus quis varius. Bibendum at varius vel pharetra vel. Aliquam ut porttitor leo a diam sollicitudin tempor. Nec ultrices dui sapien eget mi. Odio ut enim blandit volutpat maecenas volutpat blandit aliquam etiam. Gravida dictum fusce ut placerat orci. Blandit libero volutpat sed cras. Malesuada fames ac turpis egestas maecenas pharetra convallis posuere. Enim diam vulputate ut pharetra sit amet. Aliquam etiam erat velit scelerisque in dictum non consectetur. In eu mi bibendum neque egestas congue quisque egestas. Tincidunt dui ut ornare lectus sit amet. Suscipit adipiscing bibendum est ultricies integer quis auctor elit sed. Turpis egestas integer eget aliquet nibh. Adipiscing at in tellus integer feugiat scelerisque varius. Elementum nibh tellus molestie nunc non blandit massa.</p>
+      <h2 class="text-center mt-2 mb-2">Open Positions</h2>
+      <div >
+        {% for job in jobs %}
+          {% include 'job-item.html' %}
+        {% endfor %}
+      </div>
+      <div class='text-center'>
+        <button class="btn btn-primary btn-lg">
           Contact Us
         </button>
-        <p>Copyright 2023, Rohan</p>
+        <p class="text-center mt-2">Copyright 2023, Rohan</p>
       </div>
     </div>
   </body>
